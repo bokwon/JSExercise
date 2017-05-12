@@ -6,12 +6,12 @@
 		<script>
 			tests({
 				'It should return true if the second argument is a rotation of first argument.': function() {
-					eq(isRotation('waterbottle', 'erbottlewat'), true);
-					eq(isRotation('water', 'terwa'), true);
+					eq(isSubstring('waterbottle', 'erbottlewat'), true);
+					eq(isSubstring('water', 'terwa'), true);
 				},
 				'It should return false if the second argument is not a rotation of first argument.': function() {
-					eq(isRotation('boyoung', 'youngob'), false);
-					eq(isRotation('water', 'teraw'), false);
+					eq(isSubstring('boyoung', 'youngob'), false);
+					eq(isSubstring('water', 'teraw'), false);
 				}
 			})
 		</script>
