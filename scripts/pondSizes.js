@@ -1,4 +1,4 @@
-(function(){
+(function() {
 	var visitedIsland;
 	var ponds;
 	var pond;

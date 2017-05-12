@@ -21,7 +21,7 @@ function isSubstring(s1, s2) {
 		return false;
 	}
 	
-	while(s1.length > 0) {
+	while (s1.length > 0) {
 		var tempLetter = s1[0];
 		var tempIndex = s2.indexOf(tempLetter);
 		if (tempIndex < 0) {
@@ -31,7 +31,6 @@ function isSubstring(s1, s2) {
 		}
 		
 		s1 = s1.substr(1, s1.length);
-		
 	}
 	return true;
 }
