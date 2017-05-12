@@ -2,15 +2,16 @@
 <html>
 	<head>
 		<script src="simpletest.js"></script>
-		<script src="../stringRotation.js"></script>
+		<script src="../scripts/stringRotation.js"></script>
 		<script>
 			tests({
 				'It should return true if the second argument is a rotation of first argument.': function() {
-					eq(isSubstring('waterbottle', 'erbottlewat'), true);
-					eq(isSubstring('boyoung', 'young'), false);
+					eq(isRotation('waterbottle', 'erbottlewat'), true);
+					eq(isRotation('water', 'terwa'), true);
 				},
 				'It should return false if the second argument is not a rotation of first argument.': function() {
-					eq(isSubstring('boyoung', 'young'), false);
+					eq(isRotation('boyoung', 'youngob'), false);
+					eq(isRotation('water', 'teraw'), false);
 				}
 			})
 		</script>

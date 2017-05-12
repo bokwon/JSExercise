@@ -3,6 +3,13 @@
 // horizontally, or diagonally. The size of the pond is the total number of connected water cells. 
 // Write a method to compute the sizes of all ponds in the matrix. 
 
+//var input = [
+//		[0, 2, 1, 0],
+//		[0, 1, 0, 1],
+//		[1, 1, 0, 1],
+//		[0, 1, 0, 1]
+//];
+
 // Result: [2, 4, 1];
 
 (function() {
@@ -70,10 +77,3 @@
 	window.pondSizes = pondSizes;
 	
 })();
-
-//var input = [
-//		[0, 2, 1, 0],
-//		[0, 1, 0, 1],
-//		[1, 1, 0, 1],
-//		[0, 1, 0, 1]
-//];
