@@ -1,7 +1,7 @@
 (function(){
-	var visitedIsland = [];
-	var ponds = [];
-	var pond = 0;
+	var visitedIsland;
+	var ponds;
+	var pond;
 
 	function insideInput(pond) {
 		if (pond >= 0 && pond <= input.length-1) {
@@ -32,6 +32,10 @@
 	}
 
 	function pondSizes(input) {	
+		visitedIsland = [];
+		ponds = [];
+		pond = 0;
+		
 		for (var i=0; i<input.length; i++) {
 			var innerArr = [];
 			for (var j=0; j<input.length; j++) {
