@@ -6,12 +6,15 @@
 		<script>
 			tests({
 				'It should return true if the second argument is a rotation of first argument.': function() {
-					eq(isSubstring('waterbottle', 'erbottlewat'), true);
-					eq(isSubstring('water', 'terwa'), true);
+					eq(isRotation('waterbottle', 'erbottlewat'), true);
+					eq(isRotation('water', 'terwa'), true);
+					eq(isRotation('AGATTAC', 'GATTACA'), true);
+					eq(isRotation('ternaxial-pat', 'axial-pattern'), true);
 				},
 				'It should return false if the second argument is not a rotation of first argument.': function() {
-					eq(isSubstring('boyoung', 'youngob'), false);
-					eq(isSubstring('water', 'teraw'), false);
+					eq(isRotation('boyoung', 'youngob'), false);
+					eq(isRotation('water', 'teraw'), false);
+					eq(isRotation('GATATAC', 'GATTACA'), false);
 				}
 			})
 		</script>
@@ -19,5 +22,3 @@
 	<body>
 	</body>
 </html>
-	
-	
