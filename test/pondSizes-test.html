@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="simpletest.js"></script>
+		<script src="../scripts/pondSizes.js"></script>
+		<script>
+      var input;
+			tests({
+				'It should return correct pond sizes1': function() {
+          input = [
+            [0, 2, 1, 0],
+            [0, 1, 0, 1],
+            [1, 1, 0, 1],
+            [0, 1, 0, 1]
+          ];
+
+          var result = pondSizes(input);
+
+          eq(result[0], 2);
+          eq(result.length === 3, true);
+        },
+        'It should return correct pond sizes2': function() {
+          input = [
+            [0, 0, 0, 0, 0, 0],
+            [0, 1, 1, 2, 3, 0],
+            [0, 0, 1, 2, 2, 0],
+            [0, 1, 1, 1, 2, 0],
+            [0, 0, 0, 0, 0, 0]
+          ];
+
+          var result = pondSizes(input);
+
+          eq(result[0], 19);
+        },
+        'It should return correct pond sizes3': function() {
+          input = [
+            [0, 0, 0, 0],
+          	[0, 1, 2, 0],
+          	[0, 0, 0, 0]
+          ];
+
+          var result = pondSizes(input);
+
+          eq(result[0], 10);
+        }
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

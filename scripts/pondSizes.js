@@ -1,16 +1,22 @@
-// Pond Sizes: You have an integer matrix representing a plot of land, where the value at that location represents 
-// the height above sea level. A value of zero indicates water. A pond is a region of water connected vertically, 
-// horizontally, or diagonally. The size of the pond is the total number of connected water cells. 
-// Write a method to compute the sizes of all ponds in the matrix. 
+// Pond Sizes: You have an integer matrix representing a plot of land, where the value at that location represents
+// the height above sea level. A value of zero indicates water. A pond is a region of water connected vertically,
+// horizontally, or diagonally. The size of the pond is the total number of connected water cells.
+// Write a method to compute the sizes of all ponds in the matrix.
 
-//var input = [
-//		[0, 2, 1, 0],
-//		[0, 1, 0, 1],
-//		[1, 1, 0, 1],
-//		[0, 1, 0, 1]
-//];
+// var input = [
+// 	[0, 2, 1, 0],
+// 	[0, 1, 0, 1],
+// 	[1, 1, 0, 1],
+// 	[0, 1, 0, 1]
+// ]
+//
+// result = [2, 4, 1];
 
-// Result: [2, 4, 1];
+// TODOs
+// 1. refactor
+// 2. only works in square
+// 3. check Carol's code: http://collabedit.com/u7p2x
+
 
 (function() {
 	var visitedIsland;
@@ -24,7 +30,7 @@
 			return false;
 		}
 	}
-	
+
 	function findPond(row, column) {
 		var rowOffset =  [-1, -1, -1, 0, 0, 1, 1, 1];
 		var columnOffset = [-1, 0, 1, -1, 1, -1, 0, 1];
@@ -32,7 +38,7 @@
 		for (var i=0; i<rowOffset.length; i++) {
 			var left = row + rowOffset[i];
 			var right = column + columnOffset[i];
-			
+
 			if (insideInput(left) && insideInput(right)) {
 				if (visitedIsland[left][right] === false && input[left][right] === 0) {
 					pond++;
@@ -45,11 +51,11 @@
 		}
 	}
 
-	function pondSizes(input) {	
+	function pondSizes(input) {
 		visitedIsland = [];
 		ponds = [];
 		pond = 0;
-		
+
 		for (var i=0; i<input.length; i++) {
 			var innerArr = [];
 			for (var j=0; j<input.length; j++) {
@@ -68,12 +74,12 @@
 					pond = 0;
 				} else if (visitedIsland[i][j] === false && input[i][j] !== 0) {
 					visitedIsland[i][j] = true;
-				}	
-			}	
+				}
+			}
 		}
 		return ponds;
 	}
-	
+
 	window.pondSizes = pondSizes;
-	
+
 })();
