@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="simpletest.js"></script>
+		<script src="../scripts/bigNumberFormat.js"></script>
+		<script>
+			tests({
+				'case of 1000': function() {
+					eq(bigNumberFormat(1000), '1K');
+				},
+				'case of 1592': function() {
+					eq(bigNumberFormat(1592), '1.6K');
+				},
+				'case of 100': function() {
+					eq(bigNumberFormat(100), '100');
+				},
+				'case of 158000': function() {
+					eq(bigNumberFormat(158000), '158K');
+				},
+				'case of 1580000': function() {
+					eq(bigNumberFormat(1580000), '1.6M');
+				}
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

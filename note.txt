@@ -1,0 +1,18 @@
+[5/30/2017]
+1. Number.prototype.toFixed() method have binary rounding issues (eg. (0.615).toFixed(2) === "0.61". It should be "0.62"). Rewrite toFixed() method that can do everything that Javascript native toFixed() can do, and also formats a number properly.
+
+test cases:
+	1) toFixed(10.235, 2) => "10.24"
+	2) toFixed(0.615, 2) => "0.62"
+	3) toFixed(1.005, 2) => "1.01"
+	4) toFixed(12345.6789) => "12346"
+	5) toFixed(1.23e+20, 2) => "123000000000000000000.00"
+	
+2. Write a function that format numbers that are bigger than 1000. If number is less than 1000, return it without formatting the number. If number is bigger than 1000, formatted number should have minimum 2 digits.
+
+test cases:
+	1) bigNumberFormat(1000) => "1K"
+	2) bigNumberFormat(1592) => "1.6K"
+	3) bigNumberFormat(100) => "100"
+	4) bigNumberFormat(158000) => "158K"
+	5) bigNumberFormat(1580000) => "1.6M"
