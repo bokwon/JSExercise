@@ -7,8 +7,8 @@ test cases:
 	3) toFixed(1.005, 2) => "1.01"
 	4) toFixed(12345.6789) => "12346"
 	5) toFixed(1.23e+20, 2) => "123000000000000000000.00"
-	
-2. Write a function that format numbers that are bigger than 1000. If number is less than 1000, return it without formatting the number. If number is bigger than 1000, formatted number should have minimum 2 digits.
+
+2. Write a function that format numbers that are bigger than 1000. If number is less than 1000, return it without formatting the number. If number is bigger than 1000, formatted number should have minimum 2 digits. Return value should not exceed 4 characters.
 
 test cases:
 	1) bigNumberFormat(1000) => "1K"
@@ -16,3 +16,4 @@ test cases:
 	3) bigNumberFormat(100) => "100"
 	4) bigNumberFormat(158000) => "158K"
 	5) bigNumberFormat(1580000) => "1.6M"
+    6) bigNumberFormat(100500100) => "106M"

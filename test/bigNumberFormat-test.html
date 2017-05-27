@@ -19,7 +19,13 @@
 				},
 				'case of 1580000': function() {
 					eq(bigNumberFormat(1580000), '1.6M');
-				}
+				},
+                'case of 100500100': function() {
+                    eq(bigNumberFormat(100500100), '101M');
+                },
+                'case of 10100000': function() {
+                    eq(bigNumberFormat(10100000), '10M');
+                }
 			})
 		</script>
 	</head>
