@@ -17,18 +17,24 @@
 				'case of 158000': function() {
 					eq(bigNumberFormat(158000), '158K');
 				},
-				'case of 1580000': function() {
+				'case of 1,580,000': function() {
 					eq(bigNumberFormat(1580000), '1.6M');
 				},
-                'case of 100500100': function() {
-                    eq(bigNumberFormat(100500100), '101M');
-                },
-                'case of 10100000': function() {
-                    eq(bigNumberFormat(10100000), '10M');
-                }
+				'case of 100500100': function() {
+						eq(bigNumberFormat(100500100), '101M');
+				},
+				'case of 10,100,000': function() {
+						eq(bigNumberFormat(10100000), '10M');
+				}, 
+				'case of 1,001,000': function() {
+						eq(bigNumberFormat(1001000), '1M');
+				}
 			})
 		</script>
+		
+		
 	</head>
+	
 	<body>
 	</body>
 </html>

@@ -1,3 +1,7 @@
+//Write a function that format numbers that are bigger than 1000. If number is less than 1000, return it without formatting the number. If number is bigger than 1000, formatted number should have minimum 2 digits.
+// Round the second fractional digit and result should be no more than 4 characters.
+
+
 // function bigNumberFormat(number) {
 //
 // 	if (number === null || number === undefined || number === 0) {
@@ -24,11 +28,15 @@
 // 	}
 // }
 
-var bigNumberFormat = function (v)
+var bigNumberFormat = function (n)
 {
-    for (var i = 0; v >= 1000; i++)
-        v = v / 1000;
-
-    var v = Math.trunc(v * 10) / 10;
-    return (v > 10 ? Math.round(v) : v) + " KMBT"[i];
+    for (var i = 0; n >= 1000; i++)
+    {
+        n = Math.trunc(n / 1000 * 100) / 100;
+        if (n < 1000)
+          n = Math.round(n*10)/10;
+    }
+	
+		
+    return (n + " KMBT"[i]).trim();
 }
