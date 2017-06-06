@@ -5,6 +5,9 @@
 		<script src="../scripts/bigNumberFormat.js"></script>
 		<script>
 			tests({
+				'case of undefined': function() {
+					eq(bigNumberFormat(), '0');
+				},
 				'case of 1000': function() {
 					eq(bigNumberFormat(1000), '1K');
 				},

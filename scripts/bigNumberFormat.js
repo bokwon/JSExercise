@@ -1,42 +1,24 @@
 //Write a function that format numbers that are bigger than 1000. If number is less than 1000, return it without formatting the number. If number is bigger than 1000, formatted number should have minimum 2 digits.
 // Round the second fractional digit and result should be no more than 4 characters.
 
+var bigNumberFormat = function (n) {
+	if (n === null || n === undefined || n === 0) {
+		return 0;
+	}
 
-// function bigNumberFormat(number) {
-//
-// 	if (number === null || number === undefined || number === 0) {
-// 		return 0;
-// 	}
-//
-// 	if (number < 1000) {
-// 		return number;
-// 	}
-//
-// 	var numberFormat = {
-// 		'K': 1000,
-// 		'M': 1000000,
-// 		'B': 1000000000,
-// 		'T': 1000000000000
-// 	}
-//
-// 	for(var i=3; i<Object.keys(numberFormat).length; i--) {
-// 		var key = Object.keys(numberFormat)[i];
-//         var value = numberFormat[key];
-// 		if(number >= value){
-// 			return (number/value).toFixed() + key;
-// 		}
-// 	}
-// }
+	for (var i = 0; n >= 1000; i++) {
+		n = n / 1000;
 
-var bigNumberFormat = function (n)
-{
-    for (var i = 0; n >= 1000; i++)
-    {
-        n = Math.trunc(n / 1000 * 100) / 100;
-        if (n < 1000)
-          n = Math.round(n*10)/10;
-    }
-	
-		
-    return (n + " KMBT"[i]).trim();
+		if (n < 1000) {
+			if (String(n).indexOf('.') >= 0) {
+				n = Math.round(n*10)/10;
+			}
+
+			if (String(n).length >= 4) {
+				n = Math.round(n);
+			}
+		}
+	}
+
+	return (n + " KMBT"[i]).trim();
 }
